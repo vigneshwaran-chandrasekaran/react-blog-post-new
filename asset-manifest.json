@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/react-blog-post-new/static/js/main.c3ba857d.chunk.js",
+    "main.js.map": "/react-blog-post-new/static/js/main.c3ba857d.chunk.js.map",
+    "runtime-main.js": "/react-blog-post-new/static/js/runtime-main.2ddcb18b.js",
+    "runtime-main.js.map": "/react-blog-post-new/static/js/runtime-main.2ddcb18b.js.map",
+    "static/css/2.b0bb7f2c.chunk.css": "/react-blog-post-new/static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.19f4716f.chunk.js": "/react-blog-post-new/static/js/2.19f4716f.chunk.js",
+    "static/js/2.19f4716f.chunk.js.map": "/react-blog-post-new/static/js/2.19f4716f.chunk.js.map",
+    "index.html": "/react-blog-post-new/index.html",
+    "precache-manifest.1acb3613b1e288b1f149e480d3b86d7a.js": "/react-blog-post-new/precache-manifest.1acb3613b1e288b1f149e480d3b86d7a.js",
+    "service-worker.js": "/react-blog-post-new/service-worker.js",
+    "static/css/2.b0bb7f2c.chunk.css.map": "/react-blog-post-new/static/css/2.b0bb7f2c.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ddcb18b.js",
+    "static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.19f4716f.chunk.js",
+    "static/js/main.c3ba857d.chunk.js"
+  ]
+}
