@@ -14,11 +14,8 @@ const CreateBlogPost = () => {
 	let initialValues;
 	let action;
 
-	console.log({ editId });
-
 	if (editId) {
 		const selectedBlogPost = blogPosts.find(post => post.id === editId);
-		console.log({ selectedBlogPost });
 		initialValues = selectedBlogPost;
 		action = 'PUT';
 	} else {

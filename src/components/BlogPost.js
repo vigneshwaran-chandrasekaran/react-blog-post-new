@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes, { func } from 'prop-types';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
@@ -9,7 +8,6 @@ function BlogPost({ Category, title, ImageURL, author, Description, id }) {
 	const dispatch = useDispatch();
 
 	function handleOnEditClick(id) {
-		console.log(id);
 		dispatch({ type: 'EDIT_BLOG_POST', payload: id });
 		dispatch({ type: 'SHOW_BLOG_POST_POPUP', payload: true });
 	}
@@ -42,11 +40,15 @@ function BlogPost({ Category, title, ImageURL, author, Description, id }) {
 								</span>
 							</div>
 						</div>
-						<div>
+						{/* <div>
 							<Link to={`/edit/${id}`}>Edit</Link>
-						</div>
+						</div> */}
 						<div>
-							<Button onClick={() => handleOnEditClick(id)} variant="link">
+							<Button
+								className="p-0"
+								onClick={() => handleOnEditClick(id)}
+								variant="link"
+							>
 								Edit
 							</Button>
 						</div>

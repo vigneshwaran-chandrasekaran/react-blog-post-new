@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import CreateBlogPostModal from './CreateBlogPostModal';
 
 function Header() {
 	const dispatch = useDispatch();
-	// const [show, setShow] = useState(false);
-	// const handleClose = () => setShow(false);
-	// const handleShow = () => setShow(true);
 
 	function handleShow() {
 		dispatch({ type: 'SHOW_BLOG_POST_POPUP', payload: true });
@@ -32,15 +29,15 @@ function Header() {
 					<Nav.Link exact as={NavLink} to="/">
 						Blog List
 					</Nav.Link>
-					<Nav.Link as={NavLink} to="/add">
+					{/* <Nav.Link as={NavLink} to="/add">
 						Add new post
-					</Nav.Link>
-					<CreateBlogPostModal />
+					</Nav.Link> */}
 					<Button variant="primary" onClick={handleShow}>
 						Add new post
 					</Button>
 				</Nav>
 			</Navbar.Collapse>
+			<CreateBlogPostModal />
 		</Navbar>
 	);
 }

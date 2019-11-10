@@ -1,34 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
-// import { hideBlogPostPopup } from '../actions';
-
-// hideBlogPostPopup;
-
 import CreateBlogPost from './CreateBlogPost';
 
 export default function CreateBlogPostModal() {
 	const dispatch = useDispatch();
-
-	// const [show, setShow] = useState(false);
-
-	// const handleClose = () => setShow(false);
-	// const handleShow = () => setShow(true);
-
 	const show = useSelector(state => state.showBlogPostPopup);
 
 	function handleClose() {
 		dispatch({ type: 'SHOW_BLOG_POST_POPUP', payload: false });
 		dispatch({ type: 'EDIT_BLOG_POST', payload: null });
-		// alert();
-		// hideBlogPostPopup();
 	}
+
 	return (
 		<>
-			{/* <Button variant="primary" onClick={handleShow}>
-				Add new post
-			</Button> */}
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					{/* <Modal.Title>Modal heading</Modal.Title> */}
