@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
+// import { hideBlogPostPopup } from '../actions';
+
+// hideBlogPostPopup;
 
 import CreateBlogPost from './CreateBlogPost';
 
@@ -17,6 +20,9 @@ export default function CreateBlogPostModal() {
 
 	function handleClose() {
 		dispatch({ type: 'SHOW_BLOG_POST_POPUP', payload: false });
+		dispatch({ type: 'EDIT_BLOG_POST', payload: null });
+		// alert();
+		// hideBlogPostPopup();
 	}
 	return (
 		<>

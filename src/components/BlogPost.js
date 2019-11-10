@@ -11,6 +11,7 @@ function BlogPost({ Category, title, ImageURL, author, Description, id }) {
 	function handleOnEditClick(id) {
 		console.log(id);
 		dispatch({ type: 'EDIT_BLOG_POST', payload: id });
+		dispatch({ type: 'SHOW_BLOG_POST_POPUP', payload: true });
 	}
 
 	return (
