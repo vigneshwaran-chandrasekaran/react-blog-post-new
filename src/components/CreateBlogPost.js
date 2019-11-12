@@ -36,31 +36,35 @@ const CreateBlogPost = () => {
     author: Yup.string().required("Author required")
   });
 
+  async function handlePostAction(values) {
+    await axios
+      .post(API_PATH, values)
+      .then(response => {
+        dispatch({ type: "ADD_BLOG_POST", payload: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  async function handlePutAction(values) {
+    await axios
+      .put(`${API_PATH}/${values.id}`, values)
+      .then(response => {
+        dispatch({ type: "UPDATE_BLOG_POST", payload: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    dispatch({ type: "SHOW_BLOG_POST_POPUP", payload: false });
+    dispatch({ type: "EDIT_BLOG_POST", payload: null });
+  }
+
   const handleOnSubmit = async (values, { resetForm }) => {
     if (action === "POST") {
-      await axios
-        .post(API_PATH, values)
-        .then(response => {
-          dispatch({ type: "ADD_BLOG_POST", payload: response.data });
-          // handle success
-        })
-        .catch(error => {
-          // handle error
-          console.log(error);
-        });
+      handlePostAction(values);
     } else if (action === "PUT") {
-      await axios
-        .put(`${API_PATH}/${values.id}`, values)
-        .then(response => {
-          dispatch({ type: "UPDATE_BLOG_POST", payload: response.data });
-          // handle success
-        })
-        .catch(error => {
-          // handle error
-          console.log(error);
-        });
-      dispatch({ type: "SHOW_BLOG_POST_POPUP", payload: false });
-      dispatch({ type: "EDIT_BLOG_POST", payload: null });
+      handlePutAction(values);
     }
     resetForm();
   };
